@@ -1,13 +1,8 @@
 import  axios from "axios";
-import  url from "url";
 
 import { main } from "./main";
 
-export async function callback(platform, url){
-    console.log("Here is the url",url)
-    const current_url = new URL(url);
-    const search_params = current_url.searchParams;
-    const jtoken = search_params.get('jtoken');
+export async function callback(platform, jtoken){
     axios.get(
         "http://develop.wetribe.io/napi/latest/auth/user/info/current?jtoken=" + jtoken
     )

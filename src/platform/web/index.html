@@ -36,7 +36,7 @@
             const search_params = current_url.searchParams;
             const jtoken = search_params.get('jtoken');
             if(jtoken){
-                callback(platform, url);
+                callback(platform, jtoken);
             }else{
                 window.location.href = 'http://3.81.55.206/wetribe-oauth/'
             }
