@@ -30,9 +30,17 @@
                 JSON.parse(configJSON),
                 {development: import.meta.env.DEV}
             );
-            // main(platform);
+            
             let url = window.location.href;
-            callback(platform, url);
+            const current_url = new URL(url);
+            const search_params = current_url.searchParams;
+            const jtoken = search_params.get('jtoken');
+            if(jtoken){
+                callback(platform, url);
+            }else{
+                window.location.href = 'http://3.81.55.206/wetribe-oauth/'
+            }
+            
         </script>
     </body>
 </html>
