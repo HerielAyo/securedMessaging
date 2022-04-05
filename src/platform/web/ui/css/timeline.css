@@ -1,0 +1,66 @@
+/*
+Copyright 2020 Bruno Windels <bruno@windels.cloud>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.Timeline {
+    display: flex;
+    flex-direction: column;
+    /* needed to position the jump to bottom button */
+    position: relative;
+    min-height: 0;
+}
+
+.Timeline_jumpDown {
+    position: absolute;
+}
+
+.Timeline_scroller {
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    overflow-anchor: none;
+    padding: 0;
+    margin: 0;
+    /* need to read the offsetTop of tiles relative to this element in TimelineView  */
+    position: relative;
+    min-height: 0;
+    flex: 1 0 0;
+}
+
+.Timeline_scroller > ul {
+    list-style: none;
+    /* use small horizontal padding so first/last children margin isn't collapsed
+    at the edge and a scrollbar shows up when setting margin-top to bottom-align
+    content when there are not yet enough tiles to fill the viewport */
+    padding: 1px 0;
+    margin: 0;
+}
+
+.AnnouncementView {
+    display: flex;
+    align-items: center;
+}
+
+.GapView {
+    display: flex;
+}
+
+.GapView > :nth-child(2) {
+    flex: 1;
+}
+
+.Timeline_messageBody img {
+    max-width: 400px;
+    max-height: 300px;
+}

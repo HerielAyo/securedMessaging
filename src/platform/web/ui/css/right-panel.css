@@ -1,0 +1,51 @@
+.RightPanelView{
+    grid-area: right;
+    min-height: 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.RoomDetailsView, .MemberDetailsView {
+    flex-direction: column;
+    flex: 1;
+}
+
+.RoomDetailsView_avatar {
+    display: flex;
+}
+
+.RoomDetailsView_name h2, .MemberDetailsView_name h2 {
+    text-align: center;
+}
+
+.RoomDetailsView_label, .RoomDetailsView_row, .RoomDetailsView, .MemberDetailsView, .EncryptionIconView {
+    display: flex;
+    align-items: center;
+}
+
+.RoomDetailsView_value {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.EncryptionIconView {
+    justify-content: center;
+}
+
+.RightPanelView_buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.RightPanelView_buttons .hide {
+    visibility: hidden;
+}
+
+.MemberTileView a {
+    display: flex;
+    align-items: center;
+}
